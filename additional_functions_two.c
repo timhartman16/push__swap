@@ -6,7 +6,7 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 09:49:53 by tanastac          #+#    #+#             */
-/*   Updated: 2021/09/04 10:39:52 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/09/15 19:01:57 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,14 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (s1[i] - s2[i]);
+}
+
+int	ft_check_len(int len_a, int argc)
+{
+	len_a = argc - 1;
+	if (len_a > 500)
+		exit(0);
+	return (len_a);
 }
 
 void	ft_error(void)

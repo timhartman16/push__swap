@@ -6,7 +6,7 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 14:34:08 by tanastac          #+#    #+#             */
-/*   Updated: 2021/09/04 11:28:57 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/09/16 10:40:10 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	ft_split_argv(char **mas, int *stack_a, char **argv)
 	int	kol;
 
 	kol = ft_kolvo_strok(argv[1], ' ');
+	if (kol > 500)
+		exit(0);
+	ft_wrong_num(kol, mas, 0);
 	len = 0;
 	while (len < kol)
 	{
@@ -38,6 +41,7 @@ int	ft_split_argv(char **mas, int *stack_a, char **argv)
 		stack_a[len] = ft_atoi(mas[len]);
 		len++;
 	}
+	ft_ochistka(mas);
 	return (kol);
 }
 
@@ -73,7 +77,7 @@ int	main(int argc, char **argv)
 	int		len_b;
 	char	**mas;
 
-	len_a = argc - 1;
+	len_a = ft_check_len(len_a, argc);
 	len_b = 0;
 	if (argc == 1)
 		return (0);
@@ -81,7 +85,6 @@ int	main(int argc, char **argv)
 	{
 		mas = ft_split(argv[1], ' ');
 		len_a = ft_split_argv(mas, stack_a, argv);
-		ft_wrong_num(len_a, mas, 0);
 	}
 	else
 	{
@@ -92,4 +95,5 @@ int	main(int argc, char **argv)
 	if (ft_check_valid_stack(stack_a, len_a) == 1)
 		return (0);
 	ft_which_sort(stack_a, len_a, stack_b, len_b);
+	return (0);
 }

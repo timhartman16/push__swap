@@ -6,7 +6,7 @@
 /*   By: tanastac <tanastac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 14:34:55 by tanastac          #+#    #+#             */
-/*   Updated: 2021/09/04 10:20:26 by tanastac         ###   ########.fr       */
+/*   Updated: 2021/09/15 19:01:53 by tanastac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 int		ft_atoi(char *str);
 void	ft_putchar(char c);
@@ -47,5 +46,7 @@ void	ft_check_isint(char *str);
 int		ft_isdigit(char c);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_error(void);
+char	**ft_ochistka(char **str);
+int		ft_check_len(int len_a, int argc);
 
 #endif
